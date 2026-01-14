@@ -1,5 +1,5 @@
 
-namespace LTU.SearchEngine.Backend.Domain
+namespace LTU.SearchEngine.Backend.Core
 {
     public class Program
     {

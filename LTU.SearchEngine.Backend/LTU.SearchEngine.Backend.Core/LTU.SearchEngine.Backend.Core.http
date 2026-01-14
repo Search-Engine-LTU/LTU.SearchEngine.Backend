@@ -1,0 +1,6 @@
+@LTU.SearchEngine.Backend.Core_HostAddress = http://localhost:5212
+
+GET {{LTU.SearchEngine.Backend.Core_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

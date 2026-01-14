@@ -1,6 +1,0 @@
-@LTU.SearchEngine.Backend.Domain_HostAddress = http://localhost:5212
-
-GET {{LTU.SearchEngine.Backend.Domain_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
