@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LTU.SearchEngine.Backend.Core/LTU.SearchEngine.Backend.Core.csproj" />
+  <Project Path="LTU.SearchEngine.Test/LTU.SearchEngine.Test.csproj" />
+</Solution>
