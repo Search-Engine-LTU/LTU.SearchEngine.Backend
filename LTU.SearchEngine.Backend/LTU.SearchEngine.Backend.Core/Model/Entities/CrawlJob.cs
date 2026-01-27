@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>
 /// <para>
-/// A <see cref="CrawlJob"/> models the lifecycle of a URL within the crawl queue,
+/// A <see cref="CrawlJob"/> models the life-cycle of a URL within the crawl queue,
 /// including retry behavior and scheduling of future fetch attempts.
 /// </para>
 /// <para>
@@ -18,7 +18,7 @@ public class CrawlJob
 {
 	public int Id { get; set; }
 	public string Url { get; set; } = string.Empty;
-	public string Status { get; set; } = string.Empty;
+	public CrawlJobStatus Status { get; set; } 
 	public int RetryCount { get; set; }
 	public DateTime? LastAttempt { get; set; }
 	public DateTime? NextAttempt { get; set; }
