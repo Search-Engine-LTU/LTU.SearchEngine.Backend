@@ -1,0 +1,43 @@
+﻿<!--
+    Text Extraction and Noise Reduction (FRQ-2001, 2004)
+    This file verifies that the indexer only extracts visible textual content from HTML pages. 
+    It includes technical "noise" such as scripts and styles that must be ignored to ensure a clean inverted index.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test: Text Extraction Quality</title>
+    <style>
+        /* This CSS noise should be ignored by the parser (FRQ-2004) */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .hidden-element {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // This JavaScript code must be filtered out during indexing (TC-FRQ-2001)
+        function performSearch() { console.log("Initializing search..."); }
+    </script>
+
+    <h1>Search Engine Result Header</h1>
+    <p>This is the <strong>primary content</strong> that should be tokenized and stored in the database.</p>
+
+    <!-- Non-textual resources that must be ignored (FRQ-2004) -->
+    <img src="logo.png" alt="LTU Logo">
+    <video width="320" height="240" controls>
+        <source src="intro.mp4" type="video/mp4">
+    </video>
+
+    <footer>
+        <p>Footer information is also searchable text content.</p>
+    </footer>
+</body>
+</html>
