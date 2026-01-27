@@ -2,7 +2,6 @@
 
 namespace LTU.SearchEngine.Backend.Core.Model;
 
-
 /// <summary>
 /// Represents the result of a single crawl (fetch) attempt for a URL.
 /// </summary>
