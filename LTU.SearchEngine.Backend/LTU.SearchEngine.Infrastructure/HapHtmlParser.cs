@@ -1,19 +1,14 @@
 ﻿using HtmlAgilityPack;
+using LTU.SearchEngine.Infrastructure.Crawler;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LTU.SearchEngine.Infrastructure
 {
-    public class HapHtmlParser //: IHtmlParser
+    public class HapHtmlParser : IHtmlParser
     {
-        /// <summary>
-        /// Extracts all internal links from the provided HTML content.
-        /// Converts relative links to absolute URLs and ensures they belong to the same domain.
-        /// </summary>
-        /// <param name="html">The raw HTML content to parse.</param>
-        /// <param name="baseUrl">The base URL of the page, used to resolve relative paths and validate the domain.</param>
-        /// <returns>A list of unique, absolute URLs pointing to the same domain as the base URL.</returns>
+        /// <inheritdoc/>
         public List<string> ExtractInternalLinks(string html, string baseUrl)
         {
             var doc = new HtmlDocument();
@@ -59,5 +54,14 @@ namespace LTU.SearchEngine.Infrastructure
             return internalLinks.Distinct().ToList();
         }
 
+        public string ExtractText(string html)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ExtractTitle(string html)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
