@@ -25,7 +25,7 @@ namespace LTU.SearchEngine.Infrastructure
             // Select all <a> tags that have an 'href' attribute.
             var nodes = doc.DocumentNode.SelectNodes("//a[@href]");
 
-            // If no links are found, return the empty list immediately.
+            // If no links are found, return the empty list immediately. 
             if (nodes == null) return internalLinks;
 
             foreach (var node in nodes)
@@ -41,9 +41,9 @@ namespace LTU.SearchEngine.Infrastructure
                     // 1. The scheme must be http or https (excludes mailto:, javascript:, etc).
                     // 2. The host (domain) must match the base URL's host to be considered "internal".
                     bool isHttp = resultUri.Scheme == Uri.UriSchemeHttp || resultUri.Scheme == Uri.UriSchemeHttps;
-                    bool isSameDomain = resultUri.Host.Equals(baseUri.Host, StringComparison.OrdinalIgnoreCase);
+                   // bool isSameDomain = resultUri.Host.Equals(baseUri.Host, StringComparison.OrdinalIgnoreCase);
 
-                    if (isHttp && isSameDomain)
+                    if (isHttp)
                     {
                         internalLinks.Add(resultUri.AbsoluteUri);
                     }

@@ -32,7 +32,7 @@ public class ParserTests
 			"http://localhost/HelloWorld.pdf",
 			links);
 		Assert.Contains(
-			"https://google.com",
+			"https://www.google.com/",
 			links);
 	}
 }
