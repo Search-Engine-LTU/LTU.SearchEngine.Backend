@@ -1,4 +1,5 @@
 ﻿using LTU.SearchEngine.Backend.Core.Model.ValueObjects;
+using System;
 using System.Diagnostics;
 
 namespace LTU.SearchEngine.Infrastructure.Crawling;
@@ -49,15 +50,15 @@ public class Crawler : ICrawler
             }
 
             return new CrawlResult(
-                url: url,
-                title: title,
-                language: "Unknown",
-                indexedTerms: terms,
-                type: contentType,
-                content: content,
-                extractedLinks: links,
-                statusCode: response.StatusCode,
-                timeTakenMs: stopwatch.ElapsedMilliseconds
+            url: url,
+            title: title,
+            language: "Unknown",
+           indexedTerms: terms,
+            type: contentType,
+            content: content,
+            extractedLinks: links,
+            statusCode: response.StatusCode,
+            timeTakenMs: stopwatch.ElapsedMilliseconds
             );
         }
         catch (HttpRequestException ex) 
